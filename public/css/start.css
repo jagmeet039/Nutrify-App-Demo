@@ -1,0 +1,59 @@
+body {
+  color: #fff;
+  background: url('/images/home.jpg');
+  font-family: 'Roboto', sans-serif;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.newbtn1 {
+  font-size: 16px;
+  font-weight: bold;
+  background: rgb(184, 9, 9);
+  border: none;
+  min-width: 140px;
+}
+
+.newbtn1:hover,
+.newbtn1:focus {
+  background: rgb(212, 24, 24);
+  outline: none;
+}
+
+.newbtn2 {
+  font-size: 16px;
+  font-weight: bold;
+  background: rgb(1, 77, 25);
+  border: none;
+  min-width: 140px;
+}
+
+.newbtn2:hover,
+.newbtn2:focus {
+  background: rgb(6, 95, 6);
+  outline: none;
+}
+
+.box {
+  width: 390px;
+  margin: 0 auto;
+  padding: 30px 0;
+  margin-top: 80px;
+}
+
+.input-box {
+  color: #999;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background: #fff;
+  box-shadow: rgb(38 57 77) 0px 20px 30px -10px;
+  padding: 30px;
+}
+
+.input-box h2 {
+  color: #333;
+  font-weight: bold;
+  margin-top: 0;
+}

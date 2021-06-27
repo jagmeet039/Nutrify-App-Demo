@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Page</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/update.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/home" style="color: white;">NUTRIFY! (Beta)</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/history">
+          <span class="fa fa-history" style="font-size:15px; font-weight: 500; color: rgb(178, 216, 241)"> History</span>
+        </a></li>
+        <li><a><span class="fa fa-user" style="font-size:16px; font-weight: 900; color: white">
+              <%= name %>
+            </span></a></li>
+        <li><a href="/signout"><span class="fa fa-sign-out" style="color: white;"> Sign Out</span></a></li>
+      </ul>
+    </div>
+  </nav>
+  <section class="update">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="content">
+            <a href="/home/placeorder" style="color: white; text-decoration:underline;">Cancel Update!</a>
+            <h2><span class="blinker">PLEASE UPDATE YOUR MEAL Here!</span></h2>
+            <form method="post" action="/update/<%= idd %>">
+              <div class="input-group">
+                  <input type="text" class="form-control" name="food" placeholder="Enter Meal Name" >
+                <span class="input-group-btn">
+                  <button class="btn" type="submit">Update</button>
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

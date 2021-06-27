@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Final Page</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/final.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/home" style="color: white;">NUTRIFY! (Beta)</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/history">
+          <span class="fa fa-history" style="font-size:15px; font-weight: 500; color: rgb(178, 216, 241)"> History</span>
+        </a></li>
+        <li><a><span class="fa fa-user" style="font-size:16px; font-weight: 900; color: white"> <%= name %></span></a></li>
+        <li><a href="/signout"><span class="fa fa-sign-out" style="color: white;"> Sign Out</span></a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="table-responsive">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <h2>Order Details : <span class="blinker"><%= msg %></span></h2>
+        </div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>SNo</th>
+              <th style="width: 22%;">Meal Name</th>
+              <th style="width: 22%;">Address</th>
+              <th>Actions</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%if (response===null) { %>
+              <h2>You have no previous orders</h2>
+              <% } %>
+                <%if (response !==null) { %>
+                  <% for(var i=0; i< response.length; i++) { %>
+                    <tr>
+                      <td>
+                        <%= i+1 %>
+                      </td>
+                      <td>
+                        <%= response[i].Meal%>
+                      </td>
+                      <td>
+                        <%= response[i].Address %>
+                      </td>
+                      <td>
+                        <a href="/update/<%= response[i]._id %>" class="edit" title="Edit"><i class="material-icons">&#xE254;</i></a>
+                        <a href="/delete/<%= response[i]._id %>" class="delete" title="Delete"><i class="material-icons">&#xE872;</i></a>
+                      </td>
+                      <td>
+                        <%= response[i].Date%>
+                      </td>
+                      <td>
+                        <%= response[i].Time%>
+                      </td>
+                      <td>
+                        $<%= response[i].Cost%>
+                      </td>
+                    </tr>
+                   <% } %>
+                    <% } %>
+          </tbody>
+        </table>
+        <div class="text-center">
+          <a href="/pay">
+            <button class="btn btn-success">Make Payment</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <a href="/home/placeorder" style="color: white; text-decoration:underline;">Back to Order Again!</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+.update {
+  padding: 80px 0;
+  background: #19beda;
+  height: 90vh;
+}
+
+.update .content {
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.update .content h2 {
+  color: #243c4f;
+  margin-bottom: 40px;
+}
+
+.update .content .form-control {
+  height: 50px;
+  border-color: #ffffff;
+  border-radius: 0;
+}
+
+.update .content.form-control:focus {
+  box-shadow: none;
+  border: 2px solid #243c4f;
+}
+
+.update .content .btn {
+  min-height: 50px;
+  border-radius: 0;
+  background: #243c4f;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0 10px 10px 0;
+}
+
+span {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  background: #380f79;
+  border: 0;
+}
+
+.navbar-brand {
+  font-weight: 900;
+  color: white;
+}
+
+.blinker {
+  animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

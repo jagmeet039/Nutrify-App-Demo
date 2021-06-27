@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Final Page</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/history.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="table-responsive">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <h2>History Details : <span class="blinker"><%= msg %></span></h2>
+        </div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>SNo</th>
+              <th style="width: 22%;">Meal Name</th>
+              <th style="width: 22%;">Address</th>
+              <th>Time</th>
+              <th>Date</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%if (response === null) { %>
+              <h2>You have previous orders</h2>
+            <% } %>
+            <%if (response !== null) { %>
+          <% for(var i=0; i < response.length; i++) { %>
+          <tr>
+            <td><%= i+1 %></td>
+            <td><%= response[i].Meal%></td>
+            <td><%= response[i].Address %></td>      
+            <td><%= response[i].Time %></td>  
+            <td><%= response[i].Date %></td>  
+            <td>$<%= response[i].Cost %></td>       
+          </tr>
+          <% } %>
+          <% } %>
+          </tbody>
+        </table>
+        <div class="text-center">
+          <a href="/history/clearhistory">
+            <span class="fa fa-trash" arial-hidden= "true" style="font-size:17px; font-weight: 600; color: rgb(204, 62, 7)"> Clear History</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <a href="/home" style="color: white; text-decoration:underline;">Go Back to Home</a>
+  </div>
+</body>
+</html>

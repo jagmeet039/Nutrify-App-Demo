@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Patua+One">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/home" style="color: white;">NUTRIFY! (Beta)</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/history">
+            <span class="fa fa-history" style="font-size:15px; font-weight: 500; color: rgb(178, 216, 241)"> History</span>
+          </a></li>
+        <li><a><span class="fa fa-user" style="font-size:16px; font-weight: 900; color: white">
+              <%= name %>
+            </span></a></li>
+        <li><a href="/signout"><span class="fa fa-sign-out" style="color: white;"> Sign Out</span></a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container-fluid home-main">
+    <h3 class="blinker"><%= msg %></h3>
+    <br>
+    <h2>Welcome to <span class="blinker">
+        <%= name %>
+      </span> Profile</h2>
+    <p>Hungry! then place an Order here ;-)</p>
+    <a href="/home/placeorder"><button type="button" class="btn">Place Order</button></a>
+  </div>
+</body>
+
+</html>
